@@ -1,7 +1,6 @@
 package ivan.samoylov;
 
 import javafx.application.Application;
-import javafx.application.Platform;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -9,37 +8,35 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
-import java.util.Random;
-
 public class Main extends Application {
     private static final int BOARD_WIDTH = 700;
     private static final int BOARD_HEIGHT = 500;
 
     public static void main(String[] args) {
-      launch(args);
+        launch(args);
     }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-      primaryStage.setTitle("World");
-      Canvas canvas = new Canvas();
-      canvas.setHeight(BOARD_HEIGHT);
-      canvas.setWidth(BOARD_WIDTH);
-      BorderPane group = new BorderPane(canvas);
-      Scene scene = new Scene(group);
-      primaryStage.setScene(scene);
-      primaryStage.show();
+        primaryStage.setTitle("World");
+        Canvas canvas = new Canvas();
+        canvas.setHeight(BOARD_HEIGHT);
+        canvas.setWidth(BOARD_WIDTH);
+        BorderPane group = new BorderPane(canvas);
+        Scene scene = new Scene(group);
+        primaryStage.setScene(scene);
+        primaryStage.show();
 
-      GraphicsContext gc = canvas.getGraphicsContext2D();
-      drawWorld(gc);
+        GraphicsContext gc = canvas.getGraphicsContext2D();
+        drawWorld(gc);
     }
 
     private void drawWorld(GraphicsContext gc) {
         final int SUN_DIAMETR = 120;
         final double X_ROOF[] = {70, 210, 140};
         final double Y_ROOF[] = {BOARD_HEIGHT - 140,
-                                 BOARD_HEIGHT - 140,
-                                 BOARD_HEIGHT - 200};
+                BOARD_HEIGHT - 140,
+                BOARD_HEIGHT - 200};
         final int ROOF_POINTS = 3;
 
         gc.setFill(Color.SKYBLUE);
