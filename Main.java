@@ -9,6 +9,8 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
+import java.util.Random;
+
 public class Main extends Application {
     private static final int BOARD_WIDTH = 700;
     private static final int BOARD_HEIGHT = 500;
@@ -57,8 +59,19 @@ public class Main extends Application {
         gc.fillOval(50, 120, 90,25);
         gc.fillOval(450, 130, 110,35);
 
-        gc.setFill(Color.BROWN);
+        gc.setFill(Color.CORAL);
         gc.fillRect(80, BOARD_HEIGHT - 140, 120, 90);
+        gc.setFill(Color.DARKCYAN);
         gc.fillPolygon(X_ROOF, Y_ROOF, ROOF_POINTS);
+
+        gc.setFill(Color.BLACK);
+        gc.fillRect(400, BOARD_HEIGHT - 100, 10, 50);
+        gc.fillRect(430, BOARD_HEIGHT - 100, 10, 50);
+        gc.setFill(Color.GREEN);
+        gc.fillOval(390, BOARD_HEIGHT - 190, 30, 100);
+        gc.fillOval(405, BOARD_HEIGHT - 210, 60, 120);
+        gc.setStroke(Color.DARKGREEN);
+        gc.setLineWidth(2);
+        gc.strokeOval(405, BOARD_HEIGHT - 210, 60,120);
     }
 }
